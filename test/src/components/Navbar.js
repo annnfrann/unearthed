@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../index.css';
 
 export default class Navbar extends Component{
   render(){
     return(
-      <Navbar brand='logo' right>
-        <NavItem href='get-started.html'>Getting started</NavItem>
-        <NavItem href='components.html'>Components</NavItem>
-      </Navbar>
-    )
+      <h1>NAV</h1>
+      // <Navbar brand='logo' right>
+      //   <NavItem href='get-started.html'>Getting started</NavItem>
+      //   <NavItem href='components.html'>Components</NavItem>
+      // </Navbar>
+    );
   }
 }
