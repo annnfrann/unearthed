@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.css'
 
 import Nav from './components/Nav'
-import Sidenav from './components/Sidenav'
+import Sidenav from './components/Sidenav/Sidenav'
 import Submitted from './components/Submitted'
 import Approved from './components/Approved'
 
