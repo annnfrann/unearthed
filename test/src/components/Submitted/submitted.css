@@ -1,3 +1,12 @@
 .submittedCard{
   padding-left: 300px;
+  /*background-color: #7fa9bf;*/
+}
+.card{
+  background-color: #7fa9bf;
+}
+.review{
+  color: white;
+  margin-top: 15%;
+  background-color: #005480;
 }
