@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
+import {Row, Col, CardPanel} from 'react-materialize'
 import './submitted.css';
 
 export default class Submitted extends Component{
   render(){
     return(
-      <h1 className = "submitted">I'm Submitted</h1>
+      <div>
+        <h5 className = "submitted">Submitted FLRAs</h5>
+        <Row className = "submittedCard">
+      		<Col s={12} m={5}>
+      			<CardPanel className="teal lighten-4 black-text">
+      				<span>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>
+      			</CardPanel>
+      			<CardPanel className="teal lighten-4 black-text">
+      				<span>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.</span>
+      			</CardPanel>
+      		</Col>
+        </Row>
+      </div>
     );
   }
 }
