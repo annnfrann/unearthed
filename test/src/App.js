@@ -3,8 +3,8 @@ import './index.css'
 
 import Nav from './components/Nav/Nav'
 import Sidenav from './components/Sidenav/Sidenav'
-import Submitted from './components/Submitted'
-import Approved from './components/Approved'
+import Submitted from './components/Submitted/Submitted'
+import Approved from './components/Approved/Approved'
 
 class App extends Component {
   render() {

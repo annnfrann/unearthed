@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../index.css';
+import './approved.css';
 
 export default class Approved extends Component{
   render(){

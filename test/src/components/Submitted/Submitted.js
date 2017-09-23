@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../index.css';
+import './submitted.css';
 
 export default class Submitted extends Component{
   render(){
