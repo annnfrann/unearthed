@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.css'
-
 import Nav from './components/Nav/Nav'
 import Sidenav from './components/Sidenav/Sidenav'
 import Submitted from './components/Submitted/Submitted'
