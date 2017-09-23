@@ -1,0 +1,19 @@
+package routers
+
+import (
+	"database/sql"
+	"fmt"
+)
+
+// SingleEmployee = for a given employee ID, pull the information
+func SingleEmployee(id int, db *sql.DB) (queryResponse EmployeeRow, err error) {
+
+	queryResponse = EmployeeRow{}
+	row := db.QueryRow("select a.employeeid, a.employeename, e.positionname, a.supervisorid, b.locationname, d.teamname from flrap.employee a, flrap.location b, flrap.employeeteam c, flrap.team d, flrap.position e where a.employeeid = ? and a.positionid = e.positionid and a.locationid = b.locationid and a.employeeid = c.employeeid and c.teamid = d.teamid;", id)
+	err = row.Scan(&queryResponse.EmployeeID, &queryResponse.EmployeeName, &queryResponse.PositionName, &queryResponse.SupervisorID, &queryResponse.LocationName, &queryResponse.TeamName)
+	if err != nil {
+		err = fmt.Errorf("Error after QueryRow and Scan: %s", err.Error())
+	}
+
+	return
+}
