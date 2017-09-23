@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 
-import Nav from './components/Nav'
+import Nav from './components/Nav/Nav'
 import Sidenav from './components/Sidenav'
 import Submitted from './components/Submitted'
 import Approved from './components/Approved'
