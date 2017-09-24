@@ -28,15 +28,16 @@ export default class Submitted extends Component {
   }
 
   render() {
-
     const renderForm = this.state.forms.map(function(form, i) {
       if (form.riskidentified.supervisorapproved==="N"){
         return <Col  key={ i } m={4} s={12}>
      <Card className= 'card' textClassName='black-text' title={form.employeename} >
        <p>{form.taskname}</p>
        <p>12:34pm 1/2/17</p>
-         <Modal header='Modal Header' trigger={<Button flat className = "review">Review</Button>}>
-           <p>data</p>
+         <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
+           <p>Task: {form.taskname}</p>
+           <p>Risks: {form.riskname}</p>
+           <p>Mitigation Methods: {form.mitigationname}</p>
            <Button waves='light'>button</Button>
          </Modal>
      </Card>
@@ -53,49 +54,6 @@ export default class Submitted extends Component {
 
       </Row>
     </div>
-        /* <Row className = "submittedCard">
-          <Col m={4} s={12}>
-            <Card className= 'card' textClassName='black-text' title={employeeName} >
-              <p>{taskName}</p>
-              <p>12:34pm 1/2/17</p>
-                <Modal header='Modal Header' trigger={<Button flat className = "review">Review</Button>}>
-                  <p>data</p>
-                  <Button waves='light'>button</Button>
-                </Modal>
-            </Card>
-          </Col>
-          <Col m={4} s={12}>
-            <Card className= 'card' textClassName='black-text' title='Employee Name' >
-              <p>Task</p>
-              <p>12:34pm 1/2/17</p>
-                <Modal header='Modal Header' trigger={<Button flat className = "review">Review</Button>}>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e</p>
-                  <Button waves='light'>button</Button>
-                </Modal>
-            </Card>
-          </Col>
-          <Col m={4} s={12}>
-            <Card className= 'card' textClassName='black-text' title='Employee Name' >
-              <p>Task</p>
-              <p>12:34pm 1/2/17</p>
-                <Modal header='Modal Header' trigger={<Button flat className = "review">Review</Button>}>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e</p>
-                  <Button waves='light'>button</Button>
-                </Modal>
-            </Card>
-          </Col>
-          <Col m={4} s={12}>
-            <Card className= 'card' textClassName='black-text' title='Employee Name' >
-              <p>Task</p>
-              <p>12:34pm 1/2/17</p>
-                <Modal header='Modal Header' trigger={<Button flat className = "review">Review</Button>}>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e</p>
-                  <Button waves='light'>button</Button>
-                </Modal>
-            </Card>
-          </Col>
-        </Row>
-      </div> */
     );
   }
 }
