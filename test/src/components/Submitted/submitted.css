@@ -225,3 +225,6 @@ input.supervisorscore[type=range]:focus::-ms-fill-upper {
   margin-top: 5%;
   background-color: #005480;
 }
+.taskName{
+  font-size: 18px;
+}

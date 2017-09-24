@@ -31,7 +31,7 @@ export default class Approved extends Component {
       if (form.riskidentified.supervisorapproved==="Y"){
         return <Col  key={ i } m={4} s={12}>
      <Card className= 'card' textClassName='black-text' title={form.employeename} >
-       <p>{form.taskname}</p>
+       <p className="taskName">{form.taskname}</p>
        <p>12:34pm 1/2/17</p>
          <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
            <p>Task: {form.taskname}</p>
