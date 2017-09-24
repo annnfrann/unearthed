@@ -32,11 +32,14 @@ export default class Approved extends Component {
         return <Col  key={ i } m={4} s={12}>
      <Card className= 'card' textClassName='black-text' title={form.employeename} >
        <p className="taskName">{form.taskname}</p>
-       <p>12:34pm 1/2/17</p>
+       <p>{form.riskidentified.timesubmitted}</p>
          <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
+         <h5><b>Time Submitted:</b> {form.riskidentified.timesubmitted}</h5>
            <h5><b>Task:</b> {form.taskname}</h5>
            <h5><b>Risks:</b> {form.riskname}</h5>
            <h5><b>Mitigation Methods:</b> {form.mitigationname}</h5>
+           <h5><b>Minutes Spent:</b> {form.riskidentified.minutesspent}</h5>
+           <br />
            <h5><b>Threat Level of Risk:</b></h5>
            <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
            <h5><b>Supervisor Score:</b> {form.riskidentified.supervisorscore}</h5>
