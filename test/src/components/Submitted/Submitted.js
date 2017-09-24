@@ -43,7 +43,7 @@ export default class Submitted extends Component {
              <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
              <h5><b>Rate this FLRA:</b></h5>
              {/* talk to bill where to send action */}
-             <form action="#" method="update" id={form.employeename + i}><input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input>&nbsp; &nbsp; 0 &emsp; &emsp; &nbsp; 1 &emsp; &emsp; &nbsp; 2 &emsp; &emsp; &nbsp;  3 &emsp; &emsp; &nbsp;  4 &emsp; &emsp; &nbsp;  5 &emsp; &emsp; &nbsp;  6 &emsp; &emsp; &nbsp;  7 &emsp; &emsp; &nbsp;  8 &emsp; &emsp; &nbsp;  9 &emsp; &emsp; &nbsp;  10   </form>
+             <form action="#" method="update" id={form.employeename + i}><input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input><div className="indents"><p className="indent">0</p><p className="indent">1</p><p className="indent">2</p><p className="indent">3</p><p className="indent">4</p><p className="indent">5</p><p className="indent">6</p><p className="indent">7</p><p className="indent">8</p><p className="indent">9</p><p className="indent">10</p></div></form>
               <Button flat className = "approveButton" type="submit" form={form.employeename + i} onClick={function(e){console.log(document.getElementById( i ).value, {i})}} >approve</Button>
             {/* </button> */}
          </Modal>

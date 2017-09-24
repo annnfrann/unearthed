@@ -1,3 +1,10 @@
 .approvedCard{
   padding-left: 300px;
 }
+.indents{
+  display: flex;
+  justify-content: space-between;
+}
+/*.indent{
+  padding: 2%;
+}*/

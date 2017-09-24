@@ -40,7 +40,7 @@ export default class Approved extends Component {
            <h5><b>Threat Level of Risk:</b></h5>
            <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
            <h5><b>Supervisor Score:</b> {form.riskidentified.supervisorscore}</h5>
-           <input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" disabled value = {form.riskidentified.supervisorscore}></input>&nbsp; &nbsp; 0 &emsp; &emsp; &nbsp; 1 &emsp; &emsp; &nbsp; 2 &emsp; &emsp; &nbsp;  3 &emsp; &emsp; &nbsp;  4 &emsp; &emsp; &nbsp;  5 &emsp; &emsp; &nbsp;  6 &emsp; &emsp; &nbsp;  7 &emsp; &emsp; &nbsp;  8 &emsp; &emsp; &nbsp;  9 &emsp; &emsp; &nbsp;  10
+           <input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" disabled value = {form.riskidentified.supervisorscore}></input><div className="indents"><p className="indent">0</p><p className="indent">1</p><p className="indent">2</p><p className="indent">3</p><p className="indent">4</p><p className="indent">5</p><p className="indent">6</p><p className="indent">7</p><p className="indent">8</p><p className="indent">9</p><p className="indent">10</p></div>
          </Modal>
      </Card>
    </Col>
