@@ -34,10 +34,10 @@ export default class Approved extends Component {
        <p className="taskName">{form.taskname}</p>
        <p>12:34pm 1/2/17</p>
          <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
-           <p>Task: {form.taskname}</p>
-           <p>Risks: {form.riskname}</p>
-           <p>Mitigation Methods: {form.mitigationname}</p>
-           <p>Supervisor Score: {form.riskidentified.supervisorscore}</p>
+           <h5><b>Task:</b> {form.taskname}</h5>
+           <h5><b>Risks:</b> {form.riskname}</h5>
+           <h5><b>Mitigation Methods:</b> {form.mitigationname}</h5>
+           <h5><b>Supervisor Score:</b> {form.riskidentified.supervisorscore}</h5>
          </Modal>
      </Card>
    </Col>
