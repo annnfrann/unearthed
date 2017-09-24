@@ -36,13 +36,14 @@ export default class Submitted extends Component {
           <p>{form.taskname}</p>
           <p>12:34pm 1/2/17</p>
           <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
-             <p>Task: {form.taskname}</p>
-             <p>Risks: {form.riskname}</p>
-             <p>Mitigation Methods: {form.mitigationname}</p>
+             <h5>Task: {form.taskname}</h5>
+             <h5>Risks: {form.riskname}</h5>
+             <h5>Mitigation Methods: {form.mitigationname}</h5>
+             <h5>Threat Level of Risk:</h5>
              <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
-             <p>Rate this FLRA:</p>
+             <h5>Rate this FLRA:</h5>
              {/* talk to bill where to send action */}
-             <form action="#" method="update" id={form.employeename + i}><input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input></form>
+             <form action="#" method="update" id={form.employeename + i}><input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input>&nbsp; &nbsp; 0 &emsp; &emsp; &nbsp; 1 &emsp; &emsp; &nbsp; 2 &emsp; &emsp; &nbsp;  3 &emsp; &emsp; &nbsp;  4 &emsp; &emsp; &nbsp;  5 &emsp; &emsp; &nbsp;  6 &emsp; &emsp; &nbsp;  7 &emsp; &emsp; &nbsp;  8 &emsp; &emsp; &nbsp;  9 &emsp; &emsp; &nbsp;  10   </form>
               <Button flat className = "approveButton" type="submit" form={form.employeename + i} onClick={function(e){console.log(document.getElementById( i ).value, {i})}} >approve</Button>
             {/* </button> */}
          </Modal>
