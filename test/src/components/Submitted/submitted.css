@@ -10,7 +10,9 @@
   margin-top: 15%;
   background-color: #005480;
 }
-
+.review:hover, .approveButton:hover{
+  background-color: #122732;
+}
 
 input[type=range] {
   -webkit-appearance: none;
