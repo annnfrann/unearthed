@@ -6,7 +6,7 @@ import { Navbar, NavItem } from 'react-materialize';
 export default class Nav extends Component{
   render(){
     return(
-      <Navbar className="myNav" brand="FLRApp" right fixed>
+      <Navbar className="myNav" brand="&nbsp;&nbsp;&nbsp;&nbsp;FLRApp" right fixed>
         <NavItem href='#' className='supervisor'>Mr. Supervisor</NavItem>
       </Navbar>
     );
