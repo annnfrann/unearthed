@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {Row, Col, CardPanel, Card, Button, Modal} from 'react-materialize'
+import {Row, Col, CardPanel, Card, Button, Modal, T, i18n, Icon} from 'react-materialize'
 import axios from 'axios'
 import './submitted.css';
 
-const URL = "http://10.2.4.161:8080/supervisor/123";
+const URL = "http://ec2-54-201-167-124.us-west-2.compute.amazonaws.com:8080/supervisor/123";
 
 export default class Submitted extends Component {
   constructor(props) {
@@ -42,8 +42,10 @@ export default class Submitted extends Component {
              <p>Mitigation Methods: {form.mitigationname}</p>
              <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
              <p>Rate this FLRA:</p>
-             <input className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5"></input>
-           <Button flat className = "approveButton">approve</Button>
+             <input className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input>
+             <submit onClick={function(e){console.log(document.getElementById( i ).value, {i})}}>
+              <Button flat className = "approveButton" >approve</Button>
+            </submit>
          </Modal>
         </Card>
        </Col>
