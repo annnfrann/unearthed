@@ -30,20 +30,24 @@ export default class Submitted extends Component {
   render() {
     const renderForm = this.state.forms.map(function(form, i) {
       if (form.riskidentified.supervisorapproved==="N"){
-        return <Col  key={ i } m={4} s={12}>
-     <Card className= 'card' textClassName='black-text' title={form.employeename} >
-       <p>{form.taskname}</p>
-       <p>12:34pm 1/2/17</p>
-         <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
-           <p>Task: {form.taskname}</p>
-           <p>Risks: {form.riskname}</p>
-           <p>Mitigation Methods: {form.mitigationname}</p>
-           <Button waves='light'>button</Button>
+        return (
+          <Col  key={ i } m={4} s={12}>
+          <Card className= 'card' textClassName='black-text' title={form.employeename} >
+          <p>{form.taskname}</p>
+          <p>12:34pm 1/2/17</p>
+          <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
+             <p>Task: {form.taskname}</p>
+             <p>Risks: {form.riskname}</p>
+             <p>Risks: {form.riskidentified.heatindex}</p>
+             <p>Mitigation Methods: {form.mitigationname}</p>
+             <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
+             <p>Rate this FLRA:</p>
+             <input className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5"></input>
+           <Button flat className = "approveButton">approve</Button>
          </Modal>
-     </Card>
-   </Col>
-
-      }
+        </Card>
+       </Col>
+      )}
     });
 
     return (
