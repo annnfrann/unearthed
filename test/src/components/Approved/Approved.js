@@ -38,6 +38,7 @@ export default class Approved extends Component {
            <h5><b>Risks:</b> {form.riskname}</h5>
            <h5><b>Mitigation Methods:</b> {form.mitigationname}</h5>
            <h5><b>Supervisor Score:</b> {form.riskidentified.supervisorscore}</h5>
+           <input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" value = {form.riskidentified.supervisorscore}></input>&nbsp; &nbsp; 0 &emsp; &emsp; &nbsp; 1 &emsp; &emsp; &nbsp; 2 &emsp; &emsp; &nbsp;  3 &emsp; &emsp; &nbsp;  4 &emsp; &emsp; &nbsp;  5 &emsp; &emsp; &nbsp;  6 &emsp; &emsp; &nbsp;  7 &emsp; &emsp; &nbsp;  8 &emsp; &emsp; &nbsp;  9 &emsp; &emsp; &nbsp;  10
          </Modal>
      </Card>
    </Col>
