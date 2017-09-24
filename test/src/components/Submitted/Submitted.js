@@ -38,7 +38,6 @@ export default class Submitted extends Component {
           <Modal header={form.employeename} trigger={<Button flat className = "review">Review</Button>}>
              <p>Task: {form.taskname}</p>
              <p>Risks: {form.riskname}</p>
-             <p>Risks: {form.riskidentified.heatindex}</p>
              <p>Mitigation Methods: {form.mitigationname}</p>
              <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
              <p>Rate this FLRA:</p>
