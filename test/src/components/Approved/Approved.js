@@ -3,7 +3,7 @@ import {Row, Col, Card, Modal, Button} from 'react-materialize'
 import axios from 'axios'
 
 import './approved.css';
-const URL = "http://10.2.4.161:8080/supervisor/123";
+const URL = "http://ec2-54-201-167-124.us-west-2.compute.amazonaws.com:8080/supervisor/123";
 
 export default class Approved extends Component {
   constructor(props) {

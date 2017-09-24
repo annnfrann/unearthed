@@ -42,10 +42,10 @@ export default class Submitted extends Component {
              <p>Mitigation Methods: {form.mitigationname}</p>
              <input className = "heatindex" type = "range" min="0" max="1" disabled value = {form.riskidentified.heatindex}></input>
              <p>Rate this FLRA:</p>
-             <input className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input>
-             <submit onClick={function(e){console.log(document.getElementById( i ).value, {i})}}>
-              <Button flat className = "approveButton" >approve</Button>
-            </submit>
+             {/* talk to bill where to send action */}
+             <form action="#" method="update" id={form.employeename + i}><input name="supervisorscore" className = "supervisorscore" type = "range" min="0" max="10" defaultValue = "5" id ={ i }></input></form>
+              <Button flat className = "approveButton" type="submit" form={form.employeename + i} onClick={function(e){console.log(document.getElementById( i ).value, {i})}} >approve</Button>
+            {/* </button> */}
          </Modal>
         </Card>
        </Col>
