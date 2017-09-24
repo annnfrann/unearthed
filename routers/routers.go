@@ -2,7 +2,9 @@ package routers
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -53,6 +55,7 @@ type MitigationRow struct {
 
 // RiskIdentifiedRow = simple struct for single employee identified risk
 type RiskIdentifiedRow struct {
+	IDRiskIdentified   string  `json:"idriskidentified"`
 	EmployeeID         string  `json:"employeeid"`
 	FormID             string  `json:"formid"`
 	TaskID             string  `json:"taskid"`
@@ -66,7 +69,9 @@ type RiskIdentifiedRow struct {
 // FormRow = simple struct for a form
 type FormRow struct {
 	SupervisorID   string            `json:"supervisorid"`
+	SupervisorName string            `json:"supervisorname"`
 	RiskIdentified RiskIdentifiedRow `json:"riskidentified"`
+	EmployeeName   string            `json:"employeename"`
 	FormName       string            `json:"formname"`
 	TaskName       string            `json:"taskname"`
 	TaskDesc       string            `json:"taskdesc"`
@@ -81,7 +86,8 @@ func RegisterRouters() *gin.Engine {
 	var db *sql.DB
 
 	// Database Open for AWS
-	db, err := sql.Open("mysql", "flrapuser:flrappass1$T@tcp(flrap.ctriapk0cnz2.us-west-2.rds.amazonaws.com:3306)/flrap")
+	//	db, err := sql.Open("mysql", "flrapuser:flrappass1$T@tcp(flrap.ctriapk0cnz2.us-west-2.rds.amazonaws.com:3306)/flrap")
+	db, err := sql.Open("mysql", "flrapuser:flrappass1$T@tcp(flrap2.ctriapk0cnz2.us-west-2.rds.amazonaws.com:3306)/flrap")
 
 	// Database Open for mysql
 	//db, err := sql.Open("mysql", "flrapuser:flrappass1$T@tcp(127.0.0.1:3306)/flrap")
@@ -163,6 +169,17 @@ func RegisterRouters() *gin.Engine {
 		}
 	})
 
+	// GET details for all tasks
+	router.GET("/tasks", func(c *gin.Context) {
+		rows, err := GetAllTasks(db)
+		if err != nil {
+			fmt.Println(err.Error())
+			c.JSON(http.StatusNotFound, nil)
+		} else {
+			c.JSON(http.StatusOK, rows)
+		}
+	})
+
 	// GET - Pull all rows based on parameters - all are optional or can be wildcarded
 	// router.GET("/api/column1", func(c *gin.Context) {
 	// 	column2Parm := c.DefaultQuery("column2", "%")
@@ -194,27 +211,27 @@ func RegisterRouters() *gin.Engine {
 	// 	c.JSON(http.StatusOK, requestResponse)
 	// })
 
-	// PUT - update an column2 request
-	// router.PUT("/api/row/:value", func(c *gin.Context) {
-	// 	value := c.Param("value")
-	// 	fmt.Println(value)
-	// 	var x []byte
-	// 	x, _ = ioutil.ReadAll(c.Request.Body)
-	// 	var row DataRow
-	// 	err := json.Unmarshal(x, &row)
-	// 	if err != nil {
-	// 		fmt.Println(err.Error())
-	// 		c.JSON(http.StatusNotAcceptable, 0)
-	//
-	// 	} else {
-	// 		updateResults, err := UpdateRow(row, db)
-	// 		if err != nil {
-	// 			fmt.Println(err.Error()) // could also panic here, but it would be a crash
-	// 			c.JSON(http.StatusNotAcceptable, 0)
-	// 		}
-	// 		c.JSON(http.StatusOK, updateResults)
-	// 	}
-	// })
+	// PUT - update a RiskIdentified row
+	router.PUT("/supervisor/:value", func(c *gin.Context) {
+		value := c.Param("value")
+		fmt.Println(value)
+		var x []byte
+		x, _ = ioutil.ReadAll(c.Request.Body)
+		var row RiskIdentifiedRow
+		err := json.Unmarshal(x, &row)
+		fmt.Println(row)
+		if err != nil {
+			fmt.Println(err.Error())
+			c.JSON(http.StatusNotAcceptable, 0)
+		} else {
+			updateResults, err := UpdateRiskIdentified(row, db)
+			if err != nil {
+				fmt.Println(err.Error()) // could also panic here, but it would be a crash
+				c.JSON(http.StatusNotAcceptable, 0)
+			}
+			c.JSON(http.StatusOK, updateResults)
+		}
+	})
 
 	//return to main program
 	return router
